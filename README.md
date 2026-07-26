@@ -1,6 +1,17 @@
 # EdList Dashboard
 
-A modern project management dashboard built with Next.js, TypeScript, and Tailwind CSS. It provides a clean and responsive interface for viewing projects, teams, and settings in a dashboard-style layout.
+A modern project management dashboard built with Next.js, TypeScript, and Tailwind CSS.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)
+
+## Live Demo
+
+- Production URL: [https://edlist-dashboard.vercel.app/](https://edlist-dashboard.vercel.app/)
+- GitHub Repository: [https://github.com/Dhanush9999279/edlist-dashboard](https://github.com/Dhanush9999279/edlist-dashboard)
 
 ## Preview
 
@@ -14,6 +25,7 @@ A modern project management dashboard built with Next.js, TypeScript, and Tailwi
 - Teams page for team overview
 - Settings page for dashboard preferences
 - Built with reusable components
+- Deployed on Vercel
 
 ## Tech Stack
 
@@ -21,25 +33,9 @@ A modern project management dashboard built with Next.js, TypeScript, and Tailwi
 - React
 - TypeScript
 - Tailwind CSS
+- Vercel
 
-## Project Structure
-
-```bash
-app/
-  components/
-    navbar.tsx
-    sidebar.tsx
-  dashboardWrapper.tsx
-  layout.tsx
-  page.tsx
-  projects/page.tsx
-  teams/page.tsx
-  settings/page.tsx
-public/
-  dashboard-preview.png
-```
-
-## Getting Started
+## Quick Start
 
 ### 1. Clone the repository
 
@@ -76,9 +72,26 @@ npm run build
 npm run start
 ```
 
+## Project Structure
+
+```bash
+app/
+  components/
+    navbar.tsx
+    sidebar.tsx
+  dashboardWrapper.tsx
+  layout.tsx
+  page.tsx
+  projects/page.tsx
+  teams/page.tsx
+  settings/page.tsx
+public/
+  dashboard-preview.png
+```
+
 ## Why I Built This
 
-I built this project to practice creating a real dashboard UI using the Next.js App Router, reusable React components, and Tailwind CSS styling.
+This project was built to practice creating a real dashboard UI using the Next.js App Router, reusable React components, and Tailwind CSS styling while following a production-style workflow with GitHub and Vercel.
 
 ## Future Improvements
 
@@ -86,7 +99,12 @@ I built this project to practice creating a real dashboard UI using the Next.js 
 - Backend API integration
 - Database integration with Prisma and PostgreSQL
 - Search and filtering
+- Charts and analytics widgets
 - Role-based dashboard access
+
+## Contributing
+
+Contributions, suggestions, and feedback are welcome. Open an issue or submit a pull request to help improve the project.
 
 ## License
 
