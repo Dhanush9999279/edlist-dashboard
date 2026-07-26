@@ -1,65 +1,73 @@
-import Image from "next/image";
+const projects = [
+  { name: "Website Redesign", status: "On Track", tasks: 24, owner: "Design Team" },
+  { name: "Mobile App Launch", status: "At Risk", tasks: 42, owner: "Product Team" },
+  { name: "Data Migration", status: "Delayed", tasks: 18, owner: "Infra Team" },
+];
 
-export default function Home() {
+export default function HomePage() {
+  const totalTasks = projects.reduce((sum, project) => sum + project.tasks, 0);
+  const atRiskProjects = projects.filter((project) => project.status === "At Risk").length;
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-2xl font-bold text-white">Project Dashboard</h1>
+        <p className="mt-1 text-sm text-gray-400">
+          Overview of active work, task volume, and risk status.
+        </p>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-xl bg-slate-950 p-5 ring-1 ring-white/10">
+          <p className="text-sm text-gray-400">Active projects</p>
+          <p className="mt-2 text-3xl font-semibold text-white">{projects.length}</p>
+        </div>
+
+        <div className="rounded-xl bg-slate-950 p-5 ring-1 ring-white/10">
+          <p className="text-sm text-gray-400">Total tasks</p>
+          <p className="mt-2 text-3xl font-semibold text-white">{totalTasks}</p>
+        </div>
+
+        <div className="rounded-xl bg-slate-950 p-5 ring-1 ring-white/10">
+          <p className="text-sm text-gray-400">At risk projects</p>
+          <p className="mt-2 text-3xl font-semibold text-white">{atRiskProjects}</p>
+        </div>
+      </div>
+
+      <div className="rounded-xl bg-slate-950 p-5 ring-1 ring-white/10">
+        <div className="mb-4">
+          <h2 className="text-lg font-semibold text-white">Projects</h2>
+          <p className="text-sm text-gray-400">
+            Current delivery status across the active portfolio.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-gray-400">
+                <th className="py-3 pr-4 font-medium">Name</th>
+                <th className="py-3 pr-4 font-medium">Status</th>
+                <th className="py-3 pr-4 font-medium">Tasks</th>
+                <th className="py-3 pr-4 font-medium">Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+              {projects.map((project) => (
+                <tr
+                  key={project.name}
+                  className="border-b border-white/5 text-gray-200"
+                >
+                  <td className="py-4 pr-4">{project.name}</td>
+                  <td className="py-4 pr-4">{project.status}</td>
+                  <td className="py-4 pr-4">{project.tasks}</td>
+                  <td className="py-4 pr-4">{project.owner}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
