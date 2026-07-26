@@ -13,9 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <DashboardWrapper>{children}</DashboardWrapper>
-      </body>
-    </html>
+  <body suppressHydrationWarning>
+    <DashboardWrapper>{children}</DashboardWrapper>
+  </body>
+</html>
   );
 }

@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EdList Dashboard
+
+A modern project management dashboard built with Next.js, TypeScript, and Tailwind CSS. It provides a clean and responsive interface for viewing projects, teams, and settings in a dashboard-style layout.
+
+## Preview
+
+![Dashboard Preview](public/dashboard-preview.png)
+
+## Features
+
+- Dashboard-style layout with sidebar and top navigation
+- Clean and responsive user interface
+- Projects page for viewing project-related data
+- Teams page for team overview
+- Settings page for dashboard preferences
+- Built with reusable components
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Project Structure
+
+```bash
+app/
+  components/
+    navbar.tsx
+    sidebar.tsx
+  dashboardWrapper.tsx
+  layout.tsx
+  page.tsx
+  projects/page.tsx
+  teams/page.tsx
+  settings/page.tsx
+public/
+  dashboard-preview.png
+```
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Dhanush9999279/edlist-dashboard.git
+```
+
+### 2. Go into the project folder
+
+```bash
+cd edlist-dashboard
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To test the production build locally:
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Why I Built This
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I built this project to practice creating a real dashboard UI using the Next.js App Router, reusable React components, and Tailwind CSS styling.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Future Improvements
 
-## Deploy on Vercel
+- Authentication and authorization
+- Backend API integration
+- Database integration with Prisma and PostgreSQL
+- Search and filtering
+- Role-based dashboard access
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
